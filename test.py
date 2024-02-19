@@ -23,3 +23,15 @@ def test_dropStudents_error(mlops_instance):
 
 def test_getClassName(mlops_instance):
     assert mlops_instance.getClassName() == "MLOps"
+
+def test_resetClass(mlops_instance):
+    mlops_instance.enrollStudents(20)
+    mlops_instance.dropStudents(5)
+    
+    assert mlops_instance.getTotalStrength() == 15
+    assert mlops_instance.getClassName() == "MLOps"
+
+    mlops_instance.resetClass()
+
+    assert mlops_instance.getTotalStrength() == 0
+    assert mlops_instance.getClassName() == "MLOps"

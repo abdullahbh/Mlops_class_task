@@ -15,16 +15,16 @@ class StudentsInMLOps:
         self.total_strength += count
 
     def dropStudents(self, count):
-            """
-            Drop students from the class.
+        """
+        Drop students from the class.
 
-            Parameters:
-            - count (int): Number of students to drop.
-            """
-            if count <= self.total_strength:
-                self.total_strength -= count
-            else:
-                raise ValueError("Error: Cannot drop more students than the total strength.")
+        Parameters:
+        - count (int): Number of students to drop.
+        """
+        if count <= self.total_strength:
+            self.total_strength -= count
+        else:
+            raise ValueError("Error: Cannot drop more students than the total strength.")
 
     def getTotalStrength(self):
         """
@@ -44,6 +44,13 @@ class StudentsInMLOps:
         """
         return self.class_name
 
+    def resetClass(self):
+        """
+        Reset the class by setting total strength to 0 and class name to the initial value.
+        """
+        self.total_strength = 0
+        self.class_name = "MLOps"
+
 # Example usage
 if __name__ == "__main__":
     mlops_class = StudentsInMLOps()
@@ -52,3 +59,7 @@ if __name__ == "__main__":
 
     mlops_class.dropStudents(5)
     print(f"After dropping students, total strength: {mlops_class.getTotalStrength()}")
+
+    mlops_class.resetClass()
+    print(f"After resetting the class, total strength: {mlops_class.getTotalStrength()}")
+    print(f"Class name after resetting: {mlops_class.getClassName()}")
