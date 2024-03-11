@@ -1,3 +1,5 @@
 # Mlops_class_task
 
-Toxic bestfriends
+Toxic bestfriend.
+
+class task
